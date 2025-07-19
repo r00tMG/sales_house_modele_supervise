@@ -1,0 +1,106 @@
+Rapport Détaillé
+
+Projet : Simulateur d'évaluation immobilière - SalesHouses
+
+1. Contexte et Objectifs
+
+SalesHouses souhaite moderniser son offre en créant un simulateur intelligent permettant d'estimer le prix de vente d'un appartement à partir de caractéristiques saisies par l'utilisateur. L'objectif est de développer un modèle de régression supervisé s'appuyant sur des données historiques du marché marocain.
+
+2. Méthodologie
+
+2.1 Chargement des données
+
+Utilisation de la librairie pandas pour importer le dataset.
+
+Inspection de la structure avec df.info() et df.head().
+
+2.2 Analyse exploratoire des données (EDA)
+
+Compréhension des dimensions et types de variables.
+
+Identification des valeurs manquantes et doublons.
+
+Analyse des distributions des variables numériques.
+
+Visualisation des corrélations (à l'aide de histplot).
+
+2.3 Prétraitement
+
+Nettoyage & Transformation :
+
+Extraction des équipements en colonnes booléennes via str.get_dummies().
+
+Conversion de price en float (suppression des caractères non numériques).
+
+Suppression des colonnes inutiles : equipment, link, title.
+
+Traitement de city_name :
+
+Uniformisation des noms (arabe vers français).
+
+Remplacement des valeurs manquantes par "Unknown".
+
+Gestion des valeurs manquantes :
+
+Numériques : imputation par la médiane.
+
+Catégorielles : imputation par "Unknown".
+
+Outliers :
+
+Détection par IQR, z-score, boxplots.
+
+Suppression des lignes aberrantes sur price, surface_area.
+
+Encodage et Mise à l'échelle :
+
+Encodage de city_name avec LabelEncoder.
+
+Scaling des variables numériques via MinMaxScaler.
+
+Sélection de variables :
+
+Choix des variables corrélées à price (corr > 0.15).
+
+Suppression des variables fortement redondantes.
+
+2.4 Séparation des données
+
+Variable cible : y = df["price"]
+
+Variables explicatives : X
+
+Division : train_test_split(X, y, test_size=0.2)
+
+3. Entraînement des Modèles
+
+Modèles utilisés :
+
+Régression Linéaire
+
+Random Forest Regressor
+
+SVR (Support Vector Regressor)
+
+Gradient Boosting Regressor
+
+Évaluation :
+
+Métriques : RMSE, MAE, R2, MSE
+
+Courbes de comparaison prédiction vs réalité
+
+Validation croisée :
+
+5-fold cross-validation pour robustesse
+
+Optimisation :
+
+GridSearchCV et RandomizedSearchCV pour hyperparamètres
+
+Modèle final :
+
+Sélection basée sur RMSE faible, R2 élevé
+
+Sauvegarde : joblib.dump(model, "model.pkl")
+
