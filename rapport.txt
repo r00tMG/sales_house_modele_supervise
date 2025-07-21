@@ -4,7 +4,10 @@ Projet : Simulateur d'évaluation immobilière - SalesHouses
 
 1. Contexte et Objectifs
 
-SalesHouses souhaite moderniser son offre en créant un simulateur intelligent permettant d'estimer le prix de vente d'un appartement à partir de caractéristiques saisies par l'utilisateur. L'objectif est de développer un modèle de régression supervisé s'appuyant sur des données historiques du marché marocain.
+SalesHouses souhaite moderniser son offre en créant un simulateur intelligent permettant 
+d'estimer le prix de vente d'un appartement à partir de caractéristiques saisies par l'utilisateur. 
+L'objectif est de développer un modèle de régression supervisé s'appuyant sur des données historiques
+du marché marocain.
 
 2. Méthodologie
 
@@ -96,7 +99,7 @@ Validation croisée :
 
 Optimisation :
 
-GridSearchCV et RandomizedSearchCV pour hyperparamètres
+GridSearchCV ou RandomizedSearchCV pour hyperparamètres
 
 Modèle final :
 
