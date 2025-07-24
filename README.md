@@ -59,8 +59,6 @@ jupiter-lab
 
 ## 📊 Résultats attendus
 
-* Précision : R2 > 0.80
-* Faible erreur : RMSE < seuil du marché
 * Intégrabilité backend/web via `model.pkl`
 
 ## 📅 Suivi Agile (Github Projects)
